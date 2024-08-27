@@ -49,7 +49,7 @@ Debug Adapter Protocol similar to lsp is a standard way to communicate between t
 -[ ] Get satisfied with my setup and not touch it for months *Impossible*
 
 
-# <--------------official README-------------->
+# _______From official Readme__________
 Neovim's configurations are located under the following paths, depending on your OS:
 
 | OS | PATH |
