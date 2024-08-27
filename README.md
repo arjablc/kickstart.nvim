@@ -1,46 +1,55 @@
-# kickstart.nvim
+# Kickstart.nvim()
+ Amalgamation of configs from Josean Martinez, nvim-kickstart, typecraft, primegen, and myself.
 
-## Introduction
+# INSTALLATION
+```bash
+git clone https://github.com/arjablc/kickstart.nvim.git ~/.config/nvim 
+```
 
-A starting point for Neovim that is:
+## Package manager
+- Lazy.nvim as the package manager
 
-* Small
-* Single-file
-* Completely Documented
+## plugins
+- NeoTree --> file tree
+- Telescope -->  for fuzzy finding
+- lsp-config -->  lsp client of nvim
+    - nvim-lsp-file-operations --> used to change the name of a renamed file in the imports of languages
+- Mason --> for language server, linder, dap and formatter management
+    - mason-lspconfig ---> to automatically install lsp
+    - mason-tool-installer ---> to automatically other thing from mason
+- Which-key --> as the name suggests
+- Auto compeletions
+    - nvim-cmp --> plugin for auto completions
+    - luaSnip --> as the snippets engine
+    - friendly-snippets --> gives some useful snippets to common languages
+    - lspkind.nvim --> gives preview of the snippet(I think, I just coped it)
+    - lazydev.nvim --> apparantly enables nvim function in lua_ls (dunno never seen it work, still installed)
+- alipne --> greeter
+- indent-guides --> as the name suggests
+- maximizer --> maximize a split(really handy imo)
+- tree-sitter --> AST(abstract syntax tree) for better syntax highlighting.
+- lua-line --> status linde
+- undotree --> a telescope version that supports lua configs similar to the og undotree but in telescope select ui
+- surround --> ys, ds, cs commands to change surrounding of a word.....
+- nvim-lint --> linting ofc 
 
-**NOT** a Neovim distribution, but instead a starting point for your configuration.
+# Some jargon
+### lsp
+lsp stands for language server protocol, it is a protocol that lets a language server talk to clients in a standard manner.
+lsp in nvim works like this-----> you install the language server, you install the client for nvim which is nvim-lspconfig, which then can communicate with your language server.
+Mason is used to install the lsp servers or language servers
+    
+### DAP
+Debug Adapter Protocol similar to lsp is a standard way to communicate between text editors and debuggind servers for alanguage. 
 
-## Installation
+# TODO
+-[x] Copy a config or mix up many configs to make a new one
+-[ ] Make some plugins lazily loaded
+-[ ] Install something for flutter and make it a flutter ide
+-[ ] Get satisfied with my setup and not touch it for months *Impossible*
 
-### Install Neovim
 
-Kickstart.nvim targets *only* the latest
-['stable'](https://github.com/neovim/neovim/releases/tag/stable) and latest
-['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim.
-If you are experiencing issues, please make sure you have the latest versions.
-
-### Install External Dependencies
-
-External Requirements:
-- Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
-- [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
-- Clipboard tool (xclip/xsel/win32yank or other depending on platform)
-- A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
-  - if you have it set `vim.g.have_nerd_font` in `init.lua` to true
-- Language Setup:
-  - If you want to write Typescript, you need `npm`
-  - If you want to write Golang, you will need `go`
-  - etc.
-
-> **NOTE**
-> See [Install Recipes](#Install-Recipes) for additional Windows and Linux specific notes
-> and quick install snippets
-
-### Install Kickstart
-
-> **NOTE**
-> [Backup](#FAQ) your previous configuration (if any exists)
-
+# _______From official Readme__________
 Neovim's configurations are located under the following paths, depending on your OS:
 
 | OS | PATH |
@@ -49,29 +58,8 @@ Neovim's configurations are located under the following paths, depending on your
 | Windows (cmd)| `%localappdata%\nvim\` |
 | Windows (powershell)| `$env:LOCALAPPDATA\nvim\` |
 
-#### Recommended Step
-
-[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo
-so that you have your own copy that you can modify, then install by cloning the
-fork to your machine using one of the commands below, depending on your OS.
-
-> **NOTE**
-> Your fork's url will be something like this:
-> `https://github.com/<your_github_username>/kickstart.nvim.git`
-
-You likely want to remove `lazy-lock.json` from your fork's `.gitignore` file
-too - it's ignored in the kickstart repo to make maintenance easier, but it's
-[recommmended to track it in version control](https://lazy.folke.io/usage/lockfile).
-
-#### Clone kickstart.nvim
-> **NOTE**
-> If following the recommended step above (i.e., forking the repo), replace
-> `nvim-lua` with `<your_github_username>` in the commands below
-
-<details><summary> Linux and Mac </summary>
-
 ```sh
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/arjablc/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 </details>
@@ -114,10 +102,6 @@ examples of adding popularly requested plugins.
 
 ### FAQ
 
-* What should I do if I already have a pre-existing neovim configuration?
-  * You should back it up and then delete all associated files.
-  * This includes your existing init.lua and the neovim files in `~/.local`
-    which can be deleted with `rm -rf ~/.local/share/nvim/`
 * Can I keep my existing configuration in parallel to kickstart?
   * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
     to maintain multiple configurations. For example, you can install the kickstart
@@ -131,16 +115,6 @@ examples of adding popularly requested plugins.
     distribution that you would like to try out.
 * What if I want to "uninstall" this configuration:
   * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
-* Why is the kickstart `init.lua` a single file? Wouldn't it make sense to split it into multiple files?
-  * The main purpose of kickstart is to serve as a teaching tool and a reference
-    configuration that someone can easily use to `git clone` as a basis for their own.
-    As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
-    into smaller parts. A fork of kickstart that does this while maintaining the 
-    same functionality is available here:
-    * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
-  * Discussions on this topic can be found here:
-    * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
-    * [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
 
 ### Install Recipes
 
