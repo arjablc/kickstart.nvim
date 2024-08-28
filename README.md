@@ -43,10 +43,11 @@ Mason is used to install the lsp servers or language servers
 Debug Adapter Protocol similar to lsp is a standard way to communicate between text editors and debuggind servers for alanguage. 
 
 # TODO
--[x] Copy a config or mix up many configs to make a new one
--[ ] Make some plugins lazily loaded
--[ ] Install something for flutter and make it a flutter ide
--[ ] Get satisfied with my setup and not touch it for months *Impossible*
+
+- [x] Copy a config or mix up many configs to make a new one.
+- [ ] Make some plugins lazily loaded
+- [ ] Install something for flutter and make it a flutter ide
+- [ ] Get satisfied with my setup and not touch it for months *Impossible*
 
 
 # _______From official Readme__________
