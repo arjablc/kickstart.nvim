@@ -60,3 +60,7 @@ keymap.set({ 'n', 'v' }, "<leader>hb",
 
 --command mode with ;
 --not using cause of conflict with the F,f,t,T maps
+--
+-- For half page scroll and center cursor_pos
+keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'half scroll and center cursor' })
+keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'half scroll and center cursor' })
