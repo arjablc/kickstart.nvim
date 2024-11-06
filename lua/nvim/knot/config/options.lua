@@ -23,7 +23,7 @@ opt.smartcase = true
 --sign column is the signs like plus and minus
 
 --backspace
---opt.backspace = "indent, eol, start" 
+--opt.backspace = "indent, eol, start"
 --dunno this didn't work
 opt.scrolloff = 8
 
@@ -33,10 +33,8 @@ opt.splitbelow = true
 
 --For the columns'
 opt.termguicolors = true
-opt.background = dark
 
 
 --for default register
---opt.clipboard = 'unnamedplus'
+opt.clipboard = 'unnamedplus'
 --not using because of a wsl installation
-
