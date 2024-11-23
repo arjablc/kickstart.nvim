@@ -38,3 +38,6 @@ opt.termguicolors = true
 --for default register
 opt.clipboard = 'unnamedplus'
 --not using because of a wsl installation
+--#region
+--for obisdian.nvim
+vim.opt_local.conceallevel = 2
