@@ -18,7 +18,8 @@ return {
     })
 
 
-    local keymap = vim.keymap                                                                                          -- for conciseness
+    local keymap = vim
+    .keymap                                                                                                            -- for conciseness
 
     keymap.set("n", "<leader>ee", "<cmd>Neotree show filesystem right toggle<CR>", { desc = "Toggle file explorer" })  -- toggle file explorer
     keymap.set("n", "<leader>ef", "<cmd>Neotree focus reveal <CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
