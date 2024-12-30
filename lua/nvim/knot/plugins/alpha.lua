@@ -7,6 +7,7 @@ return {
 
 
     dashboard.section.header.val = {
+      "                        Welcome to NVIM                             ",
       "            :h-                                  Nhy`               ",
       "           -mh.                           h.    `Ndho               ",
       "           hmh+                          oNm.   oNdhh               ",
